@@ -192,12 +192,20 @@ public class FinishActivity extends BaseSetupWizardActivity {
 
     private static void handleEnableMetrics(SetupWizardApp setupWizardApp) {
         Bundle privacyData = setupWizardApp.getSettingsBundle();
-        if (privacyData != null
-                && privacyData.containsKey(KEY_SEND_METRICS)) {
+        if (privacyData == null) {
+            return;
+        }
+
+        if (privacyData.containsKey(KEY_SEND_METRICS)) {
             LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
                     LineageSettings.Secure.STATS_COLLECTION,
                     privacyData.getBoolean(KEY_SEND_METRICS)
                             ? 1 : 0);
+        }
+        else{
+            LineageSettings.Secure.putInt(setupWizardApp.getContentResolver(),
+                    LineageSettings.Secure.STATS_COLLECTION,
+                    0);
         }
     }
 
