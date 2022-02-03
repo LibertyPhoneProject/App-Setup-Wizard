@@ -27,16 +27,15 @@
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_WELCOME;end" id="welcome">
         <result wizard:action="locale" />
     </WizardAction>
-
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_LOCALE;end" id="locale">
-        <result wizard:action="wifi_setup" />
-    </WizardAction>
-
-    <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_WIFI_SETUP;end" id="wifi_setup">
         <result wizard:action="datetime" />
     </WizardAction>
 
     <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_DATETIME;end" id="datetime">
+        <result wizard:action="wifi_setup" />
+    </WizardAction>
+
+    <WizardAction wizard:uri="intent:#Intent;action=org.lineageos.setupwizard.LINEAGE_WIFI_SETUP;end" id="wifi_setup">
         <result wizard:action="sim_missing" />
     </WizardAction>
 
